@@ -24,7 +24,7 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
-    :status
+    :status,
     :id,
     :date,
     :rationale,
@@ -34,7 +34,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
-    :status
+    :status,
     :id,
     :date,
     :rationale,
