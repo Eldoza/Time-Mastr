@@ -1,6 +1,6 @@
 # Overtime App
 
-This is an app that helps to provide documentation to a company, which shows if salaried employees recived overtime each week.
+This is an app that helps to provide documentation to a company, which shows if salaried employees received overtime each week.
 
 ## Built with Ruby on Rails 5
 
