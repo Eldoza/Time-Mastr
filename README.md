@@ -10,3 +10,4 @@ This is an app that helps to provide documentation to a company, which shows if 
   - Adminstrate admin dashboard
   - Email summary to managers for approval
   - Needs to be documented if the employee did not log over time.
+test
