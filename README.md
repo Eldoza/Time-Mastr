@@ -1,4 +1,4 @@
-# Overtime App
+# Time Mastr
 
 This is an app that helps to provide documentation to a company, which shows if salaried employees received overtime each week.
 
