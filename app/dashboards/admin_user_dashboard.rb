@@ -18,17 +18,20 @@ class AdminUserDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime.with_options(searchable: false),
     type: Field::String.with_options(searchable: false),
     phone: Field::String.with_options(searchable: false),
+    ssn: Field::Number.with_options(searchable: true),
+    company: Field::String.with_options(searchable: false),
    }.freeze
 
 COLLECTION_ATTRIBUTES = [
     :posts,
-    :id,
+    :ssn,
     :email,   ].freeze
 
 
  SHOW_PAGE_ATTRIBUTES = [
    :posts,
-    :id,
+    :ssn,
+    :company,
     :email,
     :phone,
     :sign_in_count,
@@ -47,6 +50,8 @@ COLLECTION_ATTRIBUTES = [
     :password,
     :first_name,
     :last_name,
+    :ssn,
+    :company,
     :type,
     :phone  ].freeze
   end

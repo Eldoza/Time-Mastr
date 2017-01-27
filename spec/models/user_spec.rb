@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before do
-    @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Chuck", last_name: "Norris", phone: "5555555555")
+    @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Chuck", last_name: "Norris", phone: "5555555555", ssn: 1234, company: "ABC company")
   end
 
   describe "creation" do
@@ -34,6 +34,26 @@ RSpec.describe User, type: :model do
 
     it 'requires the phone attr to only have 10 characters' do
       @user.phone = '12345678901'
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires the ssn attr to only have integers' do
+      @user.ssn = 'mygreatstr'
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires the ssn attr to only have 4 characters' do
+      @user.ssn = '12345'
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires the ssn attr' do
+      @user.ssn = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires a company' do
+      @user.company = nil
       expect(@user).to_not be_valid
     end
   end
