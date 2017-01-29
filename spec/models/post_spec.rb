@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
   describe "Creation" do
     before do
       @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Chuck", last_name: "Norris")
-      @post = Post.create(date: Date.today, rationale: "anything", user_id: @user.id, overtime_request: 3.5)
+      @post = Post.create(date: Date.today, rationale: "anything", user_id: @user.id, daily_hours: 3.5)
     end
 
     it "can be created" do
@@ -14,13 +14,13 @@ RSpec.describe Post, type: :model do
     it "cannot be created without a date, rationale, and overtime request" do
       @post.date = nil
       @post.rationale = nil
-      @post.overtime_request = nil
+      @post.daily_hours = nil
       expect(@post).to_not be_valid
 
     end
 
     it 'has an overtime request greater than 0.0' do
-      @post.overtime_request = 0.0
+      @post.daily_hours = 0.0
       expect(@post).to_not be_valid
     end
   end
